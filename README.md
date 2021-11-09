@@ -15,4 +15,5 @@ Aucun back-end juste du front.
 - [ ] Importations de scripts
 - [ ] Meilleure utilisation de composants
 
-![lmao](https://cdn.discordapp.com/attachments/405780210265620480/907581621035737088/unknown.png)
+*Aussi j'ai retouché cette photo 3 fois pour modifier le mot "gagnote" et c'est qu'aujourd'hui que jme rends compte que ya encore une faute, je suis illétré parfois c'est grave*
+![lmao](https://cdn.discordapp.com/attachments/405780210265620480/907585966225645638/unknown.png)
