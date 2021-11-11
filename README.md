@@ -1,19 +1,21 @@
 # vue-mdtfinder
 
-Reprise du code de MDTFinder pour utiliser Vue.js pour ma première fois L'ancien code de front-end était entièrement fait qu'avec Express.js et j'avais tout codé à la main, c'était désastreux mais quand même bien organisé pour 0 framework de front-end.
+Reprise du code d'un ancien projet (MDTFinder) pour utiliser **Vue.js pour ma première fois**.
 
-C'est juste pour m'entrainer, ce site n'a plus aucun but de publication.
+L'ancien code de front-end était entièrement fait avec l'aide de Express.js et j'avais tout codé à la main, c'était désastreux mais il restait bien organisé pour 0 framework de front-end.
 
-Aucun back-end juste du front.
+Ce projet est juste là pour m'entrainer sur Vue.js, ce site n'a plus aucun but de publication.
 
 - [x] Accueil
-- [ ] Recherche
-- [ ] Teams
-- [ ] Tournois
-- [ ] News
-- [ ] Animations
-- [ ] Importations de scripts
+- [x] Recherche
+- [x] Teams
+- [ ] Page Team Solo
+- [x] Tournois
+- [ ] Page Tournoi Solo
+- [x] News
+- [x] Animations
+- [x] Importations de scripts
 - [ ] Meilleure utilisation de composants
 
 *Aussi j'ai retouché cette photo 3 fois pour modifier le mot "gagnote" et c'est qu'aujourd'hui que jme rends compte que ya encore une faute, je suis illétré parfois c'est grave*
-![lmao](https://cdn.discordapp.com/attachments/405780210265620480/907585966225645638/unknown.png)
+![lmao](https://media.discordapp.net/attachments/405780210265620480/908161235864920085/unknown.png?width=1191&height=670)

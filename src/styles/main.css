@@ -418,6 +418,7 @@ html {
     display: none;
   }
 
+
   .navbar-inner {
     display: inline-block !important;
   }
@@ -623,6 +624,11 @@ a:hover {
   background-size: 400% 100%;
 }
 
+.navLeftSection>a,
+.navLeftSection>div {
+  display: inline-block;
+}
+
 .navLeftSection a:hover {
   background: none;
   cursor: pointer;
@@ -655,6 +661,7 @@ a:hover {
   transition: opacity 0.3s;
   opacity: 1 !important;
   visibility: visible;
+  right: 10px;
 }
 
 .navbar-options {
@@ -725,7 +732,7 @@ header {
 
 #structure {
   padding-top: 50px;
-  min-height: 600px;
+  min-height: 320px;
 }
 
 #website-banner {
@@ -1461,7 +1468,6 @@ button img {
   display: inline-table;
   margin-right: 30px;
   overflow-y: auto;
-  height: 100px;
   min-width: 300px;
   flex: 1 1 0%;
 }
@@ -2707,12 +2713,13 @@ table {
 
 
 :root {
-  --second-text:#bdbdbf;
+  --second-text: #bdbdbf;
   --gradient-mdtfinder-orange: -webkit-linear-gradient(left, #FFBB1C, #FA9544);
   --gradient-mdtfinder-orange: -moz-linear-gradient(left, #FFBB1C, #FA9544);
-  --gradient-mdtfinder-orange: linear-gradient(to right, #FFBB1C, #FA9544);;
+  --gradient-mdtfinder-orange: linear-gradient(to right, #FFBB1C, #FA9544);
+  ;
   --mini-title: #dbdbdb;
-  --mdtfinder-orange : #fa9543;
+  --mdtfinder-orange: #fa9543;
   --white: #afafaf;
   --red: #e31b23;
   --bodyColor: #292a2b;
@@ -2963,9 +2970,10 @@ footer span {
 
 
 
-.match-title-image-container, .match-title-text-container {
+.match-title-image-container,
+.match-title-text-container {
   display: inline-block;
-  
+
   vertical-align: middle;
 }
 
@@ -3009,8 +3017,9 @@ footer span {
 }
 
 .skywars-timeline-event-top {
-  top: unset; 
-  bottom: 5px;;
+  top: unset;
+  bottom: 5px;
+  ;
 }
 
 .match-stats {
@@ -3018,6 +3027,6 @@ footer span {
 }
 
 .match-stats .roundedCorners {
-    margin-left: 0;
-    margin-right: 0;
+  margin-left: 0;
+  margin-right: 0;
 }

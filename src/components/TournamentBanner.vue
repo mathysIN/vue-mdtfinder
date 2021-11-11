@@ -5,7 +5,7 @@
       :key="i"
       class="tournament-box"
     >
-      <div v-if="tournament.hidden">
+      <div v-if="tournament.hidden != hidden">
         <a :href="'./tournament/' + tournament.id">
           <div class="tournament-box-image">
             <img :src="tournament.banner" />
@@ -26,6 +26,15 @@
 <script>
 export default {
   name: "TournamentBanner",
+  props: {
+    hidden: {
+      default: false,
+      type: Boolean
+    }
+  },
+      
+    
+  
   data() {
     return {
       tournamentList: [

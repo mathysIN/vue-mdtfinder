@@ -55,7 +55,7 @@ export default {
     return {
       mcName: "mathys",
       discordTag: "mathys#0001",
-      message: "je nique la mere de killian tous les jours",
+      message: "haha je cherche une mdt mec!",
       displayName: "mathys",
       team: "nugget",
       discordLink: "https://discord.gg/fuck",
