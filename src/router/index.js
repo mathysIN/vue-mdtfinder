@@ -2,7 +2,9 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from '@/views/Home.vue'
 import NoFound from '@/views/NoFound.vue'
 import Recherche from '@/views/Recherche.vue'
+import Team from '@/views/Team.vue'
 import Teams from '@/views/Teams.vue'
+import Tournament from '@/views/Tournament.vue'
 import Tournaments from '@/views/Tournaments.vue'
 import Soon from '@/views/Soon.vue'
 
@@ -24,6 +26,11 @@ const routes = [
     component: Tournaments
   },
   {
+    path: "/team/:catchAll(.*)",
+    name: "team",
+    component: Team
+  },
+  {
     path: "/teams",
     name: "Teams",
     component: Teams
@@ -31,7 +38,7 @@ const routes = [
   {
     path: "/tournament/:catchAll(.*)",
     name: "tournament",
-    component: Soon
+    component: Tournament
   },
   {
     path: "/news",

@@ -2,7 +2,12 @@
   <body>
     <Header :user="user" />
     <Banner />
-    <router-view />
+    <router-view
+      :contentData="contentData"
+      :filterUrl="filterUrl"
+      :findById="findById"
+      :page="this.$route.params.catchAll"
+    />
     <Footer :commit="commit" />
   </body>
 </template>
@@ -11,6 +16,8 @@
 import Header from "@/components/Header.vue";
 import Footer from "@/components/Footer.vue";
 import Banner from "@/components/Banner.vue";
+import tournamentsData from "@/data/tournaments.json";
+import teamsData from "@/data/teams.json";
 // import Config from "@/config/Data.json"
 
 export default {
@@ -20,7 +27,7 @@ export default {
     Footer,
     Banner,
   },
-  mounted() {
+  created() {
     const jquery = document.createElement("script");
     jquery.setAttribute(
       "src",
@@ -45,6 +52,18 @@ export default {
     main.async = true;
     document.head.appendChild(main);
   },
+  methods: {
+    filterUrl(url) {
+      console.log(url.replace(/\//g, ""));
+      return url.replace(/\//g, "");
+    },
+    findById(tournaments, name) {
+      tournaments.forEach((t) => {
+        console.log(t.id == name, t.id, name);
+      });
+      return tournaments.find((t) => t.id == name);
+    },
+  },
   data() {
     return {
       commit: "#xxxxxx",
@@ -54,6 +73,10 @@ export default {
           "https://cdn.discordapp.com/avatars/219380115602145280/f4442c191c2f24f655b9663866d8d483.webp",
         team: "nugget",
         id: "redlegamin",
+      },
+      contentData: {
+        tournamentsData: tournamentsData,
+        teamsData: teamsData,
       },
     };
   },

@@ -20,9 +20,7 @@
     </div>
     <div class="team-poster-list">
       <ul>
-        <div class="team-list">
-          <TeamCase />
-        </div>
+          <TeamCase :teams="teams"/>
       </ul>
     </div>
   </div>
@@ -33,6 +31,12 @@ import TeamCase from "@/components/TeamCase";
 
 export default {
   name: "Teams",
+  props: ["contentData"],
+  data() {
+    return {
+      teams: this.contentData.teamsData
+    }
+  },
   components: { TeamCase },
 };
 </script>

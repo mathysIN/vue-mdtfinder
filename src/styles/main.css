@@ -711,7 +711,8 @@ a:hover {
 
 body {
   font-family: "Roboto", sans-serif;
-  overflow-y: scroll;
+  overflow-x: hidden;
+  /*overflow-y: hidden;*/
   background: #26262b;
   -webkit-font-smoothing: antialiased;
   /*font-smooth: always;*/
@@ -723,11 +724,12 @@ header {
   font-size: 16px;
   text-align: center;
   padding-bottom: 5px;
+  z-index: 20;
   background: rgba(35, 39, 42, 0.25);
   width: 100%;
-
   display: block;
   z-index: 2;
+  position: relative;
 }
 
 #structure {
@@ -1553,6 +1555,9 @@ button img {
 .tournament-area {
   margin-left: auto;
   margin-right: auto;
+  padding-top: 40px;
+  position: relative;
+  z-index: 10;
 }
 
 .tournament-top {
@@ -1703,6 +1708,39 @@ li.prize {
 
 .tournament-poster img {
   width: 100%;
+  z-index: 10;
+  position: relative;
+  transition: all 0.2s;
+}
+
+.tournament-poster img:hover {
+  filter: brightness(1.1);
+}
+
+.strechAnimation {
+  animation: strechAnimation 0.8s ease-in-out;
+}
+
+@keyframes strechAnimation {
+  0% {
+    transform: scaleY(1.0) scaleX(1.0);
+  }
+
+  20% {
+    transform: scaleY(1.05) scaleX(1.0);
+  }
+
+  40% {
+    transform: scaleY(1.00) scaleX(1.05);
+  }
+
+  70% {
+    transform: scaleY(1.04) scaleX(1.00);
+  }
+
+  100% {
+    transform: scaleY(1.00) scaleX(1.00);
+  }
 }
 
 .leaderboard h4 {

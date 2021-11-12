@@ -1,6 +1,6 @@
 <template>
   <div>
-    <a v-if="logged" href="/login" target="_blank"
+    <a v-if="!logged" href="/login" target="_blank"
       ><button type="button" class="navBouton">Connexion</button></a
     >
     <button v-else class="logged-image" onclick="showOptions()">

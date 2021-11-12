@@ -1,0 +1,37 @@
+[{
+    "id": "star",
+    "name": "str",
+    "description": "haha blackn t une merde",
+    "members": [{
+        "id": "315861094100893696",
+        "perm": "admin"
+    }],
+    "mdt": [],
+    "logo": "https://cdn.discordapp.com/attachments/580436332069781532/725347821401800775/mdtfinder_beta.png",
+    "banner": "https://cdn.discordapp.com/attachments/351304056901206016/741031943298088980/MDT_FINDER_wallpaper2.PNG",
+    "rcState": "ouvert"
+}, {
+    "id": "komorebi",
+    "name": "KMB",
+    "description": "Yanys x Heureuse",
+    "members": [{
+        "id": "455027980633243668",
+        "perm": "admin"
+    }],
+    "mdt": [],
+    "logo": "https://cdn.discordapp.com/attachments/580436332069781532/725347821401800775/mdtfinder_beta.png",
+    "banner": "https://cdn.discordapp.com/attachments/351304056901206016/741031943298088980/MDT_FINDER_wallpaper2.PNG",
+    "rcState": "ouvert"
+}, {
+    "id": "nugget",
+    "name": "Nugget",
+    "description": "La Nugget ets une team chill ",
+    "members": [{
+        "id": "323144510961876994",
+        "perm": "admin"
+    }],
+    "mdt": [],
+    "logo": "https://cdn.discordapp.com/attachments/580436332069781532/725347821401800775/mdtfinder_beta.png",
+    "banner": "https://cdn.discordapp.com/attachments/351304056901206016/741031943298088980/MDT_FINDER_wallpaper2.PNG",
+    "rcState": "ouvert"
+}]
