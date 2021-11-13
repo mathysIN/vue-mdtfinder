@@ -65,10 +65,12 @@ export default {
     },
   },
   data() {
+    let pathname = window.location.pathname;
     return {
       commit: "#xxxxxx",
       logged: false,
-      page: window.location.pathname,
+      pathname: pathname,
+      page: pathname.substring(pathname.lastIndexOf('/') + 1),
       user: {
         avatarURL:
           "https://cdn.discordapp.com/avatars/219380115602145280/f4442c191c2f24f655b9663866d8d483.webp",
