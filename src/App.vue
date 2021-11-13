@@ -52,10 +52,6 @@ export default {
     main.async = true;
     document.head.appendChild(main);
   },
-  mounted() {
-    console.log(this);
-    console.log(this.$route);
-  },
   methods: {
     filterUrl(url) {
       console.log(url.replace(/\//g, ""));

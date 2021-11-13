@@ -36,6 +36,12 @@ export default {
       console.log(this.findById(this.contentData.tournamentsData, this.page))
     console.log(this.contentData.tournamentsData);
   },
+  
+  mounted() {
+    console.log(this);
+    console.log(this.page);
+    console.log(this.$route);
+  },
   components: { TournamentData },
   /*methods: {
     filterUrl(url) {
