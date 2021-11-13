@@ -6,7 +6,7 @@
       :contentData="contentData"
       :filterUrl="filterUrl"
       :findById="findById"
-      :page="this.$route.params.catchAll"
+      :page="page"
     />
     <Footer :commit="commit" />
   </body>
@@ -68,6 +68,7 @@ export default {
     return {
       commit: "#xxxxxx",
       logged: false,
+      page: window.location.pathname,
       user: {
         avatarURL:
           "https://cdn.discordapp.com/avatars/219380115602145280/f4442c191c2f24f655b9663866d8d483.webp",
