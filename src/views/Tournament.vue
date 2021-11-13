@@ -28,16 +28,15 @@ export default {
   name: "Tournament",
   data() {
     return {
-      tournament: this.findById(this.contentData.tournamentsData, this.filterUrl(this.page)),
+      tournament: this.findById(
+        this.contentData.tournamentsData,
+        this.filterUrl(this.page)
+      ),
     };
   },
   props: ["contentData", "findById", "filterUrl", "page"],
-  beforeMount() {
-      console.log(this.findById(this.contentData.tournamentsData, this.page))
-    console.log(this.contentData.tournamentsData);
-  },
-  
-  mounted() {
+
+  created() {
     console.log(this);
     console.log(this.page);
     console.log(this.$route);
