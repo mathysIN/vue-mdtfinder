@@ -18,6 +18,7 @@ import Footer from "@/components/Footer.vue";
 import Banner from "@/components/Banner.vue";
 import tournamentsData from "@/data/tournaments.json";
 import teamsData from "@/data/teams.json";
+import matchs from "@/services/matchs.js";
 // import Config from "@/config/Data.json"
 
 export default {
@@ -27,7 +28,7 @@ export default {
     Footer,
     Banner,
   },
-  created() {
+  async created() {
     const jquery = document.createElement("script");
     jquery.setAttribute(
       "src",
@@ -70,7 +71,7 @@ export default {
       commit: "#xxxxxx",
       logged: false,
       pathname: pathname,
-      page: pathname.substring(pathname.lastIndexOf('/') + 1),
+      page: pathname.substring(pathname.lastIndexOf("/") + 1),
       user: {
         avatarURL:
           "https://cdn.discordapp.com/avatars/219380115602145280/f4442c191c2f24f655b9663866d8d483.webp",
@@ -80,6 +81,9 @@ export default {
       contentData: {
         tournamentsData: tournamentsData,
         teamsData: teamsData,
+      },
+      api: {
+        matchs: matchs,
       },
     };
   },

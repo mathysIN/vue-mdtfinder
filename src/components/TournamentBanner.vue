@@ -8,10 +8,10 @@
       <div v-if="tournament.hidden != hidden">
         <a :href="'./tournament/' + tournament.id">
           <div class="tournament-box-image">
-            <img :src="tournament.banner" />
+            <img :src="tournament.brand ? tournament.brand.banner : tournament.banner" />
           </div>
           <div class="tournament-box-text">
-            <img :src="tournament.gamemodeImage" />
+            <img :src="tournament.gamemode ? tournament.gamemode.image : tournament.gamemodeImage" />
             <div class="tournament-box-text-info">
               <h3>{{ tournament.name }}</h3>
               <span>{{ tournament.descriptions.banner }}</span>
@@ -24,19 +24,14 @@
 </template>
 
 <script>
+import tournaments from "@/services/tournaments";
+
 export default {
   name: "TournamentBanner",
-  props: {
-    hidden: {
-      default: false,
-      type: Boolean
-    }
-  },
-      
-    
-  
+
   data() {
     return {
+      hidden: false,
       tournamentList: [
         {
           id: "skywars-test-event",
@@ -63,12 +58,15 @@ export default {
             data: [],
           },
           hidden: false,
-          wallpaper:
+          brand: {
+            wallpaper:
             "https://res.cloudinary.com/frozed/image/upload/v1587226007/mdtfinder/tournaments/Skywars%20Test%20Event/Wallpaper.jpg",
           poster:
             "https://res.cloudinary.com/frozed/image/upload/v1587228171/mdtfinder/tournaments/Skywars%20Test%20Event/Poster.jpg",
           banner:
             "https://res.cloudinary.com/frozed/image/upload/v1587228171/mdtfinder/tournaments/Skywars%20Test%20Event/Banner.jpg",
+          
+          },
           gamemode: "skywars",
           gamemodeImage:
             "https://res.cloudinary.com/frozed/image/upload/v1558707042/mdtfinder/game/skywars.png",
@@ -87,12 +85,13 @@ export default {
             data: { teams: [], results: [] },
           },
           hidden: false,
-          wallpaper:
+          brand: {wallpaper:
             "https://res.cloudinary.com/frozed/image/upload/v1587229072/mdtfinder/tournaments/Rush%20Test%20Event/Wallpaper.jpg",
           poster:
             "https://res.cloudinary.com/frozed/image/upload/v1587229072/mdtfinder/tournaments/Rush%20Test%20Event/Poster.jpg",
           banner:
             "https://res.cloudinary.com/frozed/image/upload/v1587229072/mdtfinder/tournaments/Rush%20Test%20Event/Banner.jpg",
+          },
           gamemode: "rush",
           gamemodeImage:
             "https://res.cloudinary.com/frozed/image/upload/v1558707003/mdtfinder/game/rush.png",
@@ -120,12 +119,15 @@ export default {
             data: [],
           },
           hidden: true,
-          wallpaper:
+          brand: {
+            wallpaper:
             "https://res.cloudinary.com/frozed/image/upload/v1587225945/mdtfinder/tournaments/Skywars%20Showdown/Wallpaper.jpg",
           poster:
             "https://res.cloudinary.com/frozed/image/upload/v1587225942/mdtfinder/tournaments/Skywars%20Showdown/Poster.jpg",
           banner:
             "https://res.cloudinary.com/frozed/image/upload/v1587225945/mdtfinder/tournaments/Skywars%20Showdown/Banner.jpg",
+          
+          },
           gamemode: "skywars",
           gamemodeImage:
             "https://res.cloudinary.com/frozed/image/upload/v1558707042/mdtfinder/game/skywars.png",
@@ -150,6 +152,16 @@ export default {
         },
       ],
     };
+  },
+
+  async created() {
+    try {
+      const t = await tournaments.getTournament();
+      this.tournamentList = t;
+      console.log(t);
+    } catch (error) {
+      console.log(error);
+    }
   },
 };
 </script>

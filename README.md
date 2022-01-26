@@ -1,10 +1,12 @@
 # vue-mdtfinder
 
-Reprise du code d'un ancien projet (MDTFinder) pour utiliser **Vue.js pour ma première fois**.
+Bon au final reprise de MDTFinder tout cours donc j'vais utiliser ce code 👍
 
-L'ancien code de front-end était entièrement fait avec l'aide de Express.js et j'avais tout codé à la main, c'était désastreux mais il restait bien organisé pour 0 framework de front-end.
+~~Reprise du code d'un ancien projet (MDTFinder) pour utiliser **Vue.js pour ma première fois**.~~
 
-Ce projet est juste là pour m'entrainer sur Vue.js, ce site n'a plus aucun but de publication.
+~~L'ancien code de front-end était entièrement fait avec l'aide de Express.js et j'avais tout codé à la main, c'était désastreux mais il restait bien organisé pour 0 framework de front-end.~~
+
+~~Ce projet est juste là pour m'entrainer sur Vue.js, ce site n'a plus aucun but de publication.~~
 
 - [x] Accueil
 - [x] Recherche

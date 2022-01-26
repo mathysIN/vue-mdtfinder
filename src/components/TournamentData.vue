@@ -30,6 +30,7 @@
       <div class="tournament-point-list">
         <h4 class="tournament-section-title">Recompenses</h4>
         <PointSystem :tournament="tournament" :reward="true" />
+        <Leaderboard />
       </div>
     </div>
   </div>
