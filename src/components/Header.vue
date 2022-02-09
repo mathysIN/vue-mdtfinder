@@ -14,17 +14,17 @@
           <a href="/home">
             <li class="menu-ripple">Accueil</li>
           </a>
-          <a href="/rechercher">
-            <li class="menu-ripple">Recherche</li>
-          </a>
-          <a href="/teams">
-            <li class="menu-ripple">Teams</li>
-          </a>
           <a href="/tournaments">
             <li class="menu-ripple">Tournois</li>
           </a>
           <a href="/news">
             <li class="menu-ripple">News</li>
+          </a>
+          <a href="/teams">
+            <li class="menu-ripple">Teams</li>
+          </a>
+          <a href="/rechercher">
+            <li class="menu-ripple">Recherche</li>
           </a>
         </ul>
         <div class="navLeftSection">

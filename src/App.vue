@@ -2,13 +2,16 @@
   <body>
     <Header :user="user" />
     <Banner />
-    <router-view
+    <div class="w-4/5 ml-auto mr-auto"><router-view
+      
       :contentData="contentData"
       :filterUrl="filterUrl"
       :findById="findById"
       :page="page"
     />
+    </div>
     <Footer :commit="commit" />
+    
   </body>
 </template>
 
@@ -23,35 +26,14 @@ import matchs from "@/services/matchs.js";
 
 export default {
   name: "App",
+  props: ["M"],
   components: {
     Header,
     Footer,
-    Banner,
+    Banner
   },
   async created() {
-    const jquery = document.createElement("script");
-    jquery.setAttribute(
-      "src",
-      "https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"
-    );
-    jquery.async = true;
-    document.head.appendChild(jquery);
-
-    const waypoints = document.createElement("script");
-    waypoints.setAttribute(
-      "src",
-      "https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"
-    );
-    waypoints.async = true;
-    document.head.appendChild(waypoints);
-
-    const main = document.createElement("script");
-    main.setAttribute(
-      "src",
-      "https://cdn.discordapp.com/attachments/388667745685733376/908123423270637599/main.js"
-    );
-    main.async = true;
-    document.head.appendChild(main);
+    
   },
   methods: {
     filterUrl(url) {
@@ -64,6 +46,8 @@ export default {
       });
       return tournaments.find((t) => t.id == name);
     },
+  },
+  mounted() {
   },
   data() {
     let pathname = window.location.pathname;

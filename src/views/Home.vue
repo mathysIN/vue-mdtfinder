@@ -4,7 +4,7 @@
       <h1>MDTFinder</h1>
       <h2>ACCEDEZ A LA VRAIE COMPETITION MINECRAFT</h2>
     </div>
-    <section class="mdt-search">
+    <!--<section class="mdt-search">
       <div class="mdt-search-container">
         <p class="mdt-search-title">Recherches de MDT récentes</p>
         <MDTCase />
@@ -17,7 +17,7 @@
         <p class="mdt-search-title">Recherches MDT automatiques</p>
         <MDTCase />
       </div>
-    </section>
+    </section>-->
     <section class="tournament-show">
       <a href="/tournaments"
         ><div class="tournament-show-title">
@@ -41,7 +41,8 @@
       </div>
       <div id="bot-presentation">
         <h3>Fonctionnalités MDTFinder</h3>
-        <div class="image-and-text div-bounce">
+        <PresentationSlide/>
+        <!--<div class="image-and-text div-bounce">
           <div class="image-and-text-image">
             <img
               src="https://cdn.glitch.com/12319aa7-c5e0-41a5-82b7-d5c9ad05fdd0%2FRecherche.png?v=1572108214459"
@@ -51,27 +52,9 @@
             <h4>Recherchez des Match de Team facilement</h4>
             <p>Communiquez facilement à tous les autres utilisateurs du bot</p>
           </div>
-        </div>
+        </div>-->
+        
         <div class="image-and-text div-bounce">
-          <div class="image-and-text-text">
-            <h4>Trackez vos stats en direct</h4>
-            <p>
-              Suivez statistiques, classements et tournois sur Discord
-              directement
-            </p>
-          </div>
-          <div class="image-and-text-image">
-            <img
-              src="https://cdn.glitch.com/12319aa7-c5e0-41a5-82b7-d5c9ad05fdd0%2FStatistiques.png?v=1572108211945"
-            />
-          </div>
-        </div>
-        <div class="image-and-text div-bounce">
-          <div class="image-and-text-image">
-            <img
-              src="https://res.cloudinary.com/frozed/image/upload/v1597061639/mdtfinder/presentation/team.png"
-            />
-          </div>
           <div class="image-and-text-text">
             <h4>Profils et teams personnalisables</h4>
             <p>
@@ -79,6 +62,12 @@
               de profil/team
             </p>
           </div>
+          <div class="image-and-text-image">
+            <img
+              src="https://res.cloudinary.com/frozed/image/upload/v1597061639/mdtfinder/presentation/team.png"
+            />
+          </div>
+          
         </div>
         <div class="image-and-text div-bounce">
           <div class="image-and-text-text">
@@ -127,14 +116,17 @@
 </template>
 
 <script>
-import MDTCase from "../components/MDTCase.vue";
+//import MDTCase from "../components/MDTCase.vue";
+import PresentationSlide from "../components/PresentationSlide.vue"
 import TournamentBanner from "../components/TournamentBanner.vue";
+
 
 export default {
   name: "Home",
   components: {
-    MDTCase,
+    //MDTCase,
     TournamentBanner,
+    PresentationSlide
   },
 };
 </script>

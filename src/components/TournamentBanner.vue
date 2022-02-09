@@ -1,12 +1,14 @@
 <template>
   <div>
+    
+    <Loading v-if="!error && tournamentList.length == 0 "/>
     <div
       v-for="(tournament, i) in tournamentList"
       :key="i"
       class="tournament-box"
     >
       <div v-if="tournament.hidden != hidden">
-        <a :href="'./tournament/' + tournament.id">
+        <a :href="tournament.id ? './tournament/' + tournament.id : '' ">
           <div class="tournament-box-image">
             <img :src="tournament.brand ? tournament.brand.banner : tournament.banner" />
           </div>
@@ -25,142 +27,29 @@
 
 <script>
 import tournaments from "@/services/tournaments";
+import Loading from "@/components/Loading";
+import M from 'materialize-css'
 
 export default {
   name: "TournamentBanner",
-
+  components: {
+    Loading
+  },
   data() {
     return {
       hidden: false,
-      tournamentList: [
-        {
-          id: "skywars-test-event",
-          name: "Skywars Test Event",
-          descriptions: {
-            banner: "Premier Tournois de Test !",
-            poster:
-              " PROUVEZ VOS VALEUR AU COURS D'UN PETIT TOURNOIS DE TEST !",
-          },
-          pointSystem: [
-            { name: "1 kill", points: 2 },
-            { name: "Top 1", points: 3 },
-            { name: "Top 2", points: 2 },
-            { name: "Top 3", points: 1 },
-            { name: "Top 4", points: 1 },
-            { name: "Top 5", points: 1 },
-            { name: "Top 6", points: 1 },
-            { name: "Top 7", points: 1 },
-            { name: "Top 8", points: 1 },
-          ],
-          reward: [],
-          ranking: {
-            type: "placement",
-            data: [],
-          },
-          hidden: false,
-          brand: {
-            wallpaper:
-            "https://res.cloudinary.com/frozed/image/upload/v1587226007/mdtfinder/tournaments/Skywars%20Test%20Event/Wallpaper.jpg",
-          poster:
-            "https://res.cloudinary.com/frozed/image/upload/v1587228171/mdtfinder/tournaments/Skywars%20Test%20Event/Poster.jpg",
-          banner:
-            "https://res.cloudinary.com/frozed/image/upload/v1587228171/mdtfinder/tournaments/Skywars%20Test%20Event/Banner.jpg",
-          
-          },
-          gamemode: "skywars",
-          gamemodeImage:
-            "https://res.cloudinary.com/frozed/image/upload/v1558707042/mdtfinder/game/skywars.png",
-        },
-        {
-          id: "rushers-test-event",
-          name: "Rushers Test Event",
-          descriptions: {
-            banner: "Premier Tournois de Test !",
-            poster: "PROUVEZ VOS VALEUR AU COURS D'UN PETIT TOURNOIS DE TEST !",
-          },
-          pointSystem: [],
-          reward: [],
-          ranking: {
-            type: "bracket",
-            data: { teams: [], results: [] },
-          },
-          hidden: false,
-          brand: {wallpaper:
-            "https://res.cloudinary.com/frozed/image/upload/v1587229072/mdtfinder/tournaments/Rush%20Test%20Event/Wallpaper.jpg",
-          poster:
-            "https://res.cloudinary.com/frozed/image/upload/v1587229072/mdtfinder/tournaments/Rush%20Test%20Event/Poster.jpg",
-          banner:
-            "https://res.cloudinary.com/frozed/image/upload/v1587229072/mdtfinder/tournaments/Rush%20Test%20Event/Banner.jpg",
-          },
-          gamemode: "rush",
-          gamemodeImage:
-            "https://res.cloudinary.com/frozed/image/upload/v1558707003/mdtfinder/game/rush.png",
-        },
-        {
-          id: "skywars-showdown",
-          name: "Skywars Showdown",
-          descriptions: {
-            banner: "Soyez le meilleur !",
-            poster:
-              " GRIMPEZ LE CLASSEMENT EN ACCUMULANT DES POINTS ET REMPORTEZ DES RECOMPENSES !",
-          },
-          pointSystem: [
-            { name: "1 kill", points: 1 },
-            { name: "Top 1", points: 5 },
-          ],
-          reward: [
-            { name: "5000 Faveurs", place: 1 },
-            { name: "2000 Faveurs", place: 2 },
-            { name: "1000 Faveurs", place: 3 },
-            { name: "500 Faveurs", place: 4 },
-          ],
-          ranking: {
-            type: "placement",
-            data: [],
-          },
-          hidden: true,
-          brand: {
-            wallpaper:
-            "https://res.cloudinary.com/frozed/image/upload/v1587225945/mdtfinder/tournaments/Skywars%20Showdown/Wallpaper.jpg",
-          poster:
-            "https://res.cloudinary.com/frozed/image/upload/v1587225942/mdtfinder/tournaments/Skywars%20Showdown/Poster.jpg",
-          banner:
-            "https://res.cloudinary.com/frozed/image/upload/v1587225945/mdtfinder/tournaments/Skywars%20Showdown/Banner.jpg",
-          
-          },
-          gamemode: "skywars",
-          gamemodeImage:
-            "https://res.cloudinary.com/frozed/image/upload/v1558707042/mdtfinder/game/skywars.png",
-        },
-        {
-          id: "rushers-legends",
-          name: "Rushers Legends",
-          descriptions: {
-            banner: "Le tournois spécial pour les pro du rush",
-          },
-          hidden: true,
-          wallpaper:
-            "https://res.cloudinary.com/frozed/image/upload/v1587229084/mdtfinder/tournaments/Rushers%20Legends/Wallpaper.jpg",
-          poster:
-            "https://res.cloudinary.com/frozed/image/upload/v1587229083/mdtfinder/tournaments/Rushers%20Legends/Poster.jpg",
-          banner:
-            "https://res.cloudinary.com/frozed/image/upload/v1587229084/mdtfinder/tournaments/Rushers%20Legends/Banner.jpg",
-
-          gamemode: "rush",
-          gamemodeImage:
-            "https://res.cloudinary.com/frozed/image/upload/v1558707003/mdtfinder/game/rush.png",
-        },
-      ],
+      tournamentList: [],
+      error: null
     };
   },
 
-  async created() {
+  async beforeCreate() {
     try {
-      const t = await tournaments.getTournament();
+      const t = await tournaments.get();
       this.tournamentList = t;
-      console.log(t);
     } catch (error) {
-      console.log(error);
+      this.error = error;
+      M.toast({"html": "Impossible de charger les tournois"})
     }
   },
 };

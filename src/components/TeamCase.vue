@@ -37,7 +37,6 @@ export default {
   name: "TeamCase",
   props: ["teams"],
   mounted() {
-    console.log(this.teams);
   },
 };
 </script>

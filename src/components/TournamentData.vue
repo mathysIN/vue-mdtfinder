@@ -1,10 +1,10 @@
 <template>
-  <div>
-    <div class="tournament-top">
+  <div class="flex grid-cols-[200px_minmax(900px,_1fr)_100px]">
+    <div class="tournament-top flex-1">
       <div class="tournament-top-up">
         <div class="tournament-poster">
           <img
-            :src="tournament.poster"
+            :src="tournament.brand.poster"
             :class="strechAnimation"
             @click="activateStrechAnimation()"
           />
@@ -13,32 +13,45 @@
       <div class="tournament-top-down">
         <h2>{{ tournament.name }}</h2>
         <h3>{{ tournament.descriptions.poster }}</h3>
-        <button
-          class="tournament-info-button"
-          :actionapi="`tournament/join/${tournament.id}`"
-        >
-          S'inscrire au tournois
-        </button>
+        <div v-if="tournament.signup && tournament.signup.open != false">
+          <a :href="tournament.signup.link"
+            ><button
+              class="tournament-info-button"
+              :actionapi="
+                tournament.signup.link || `tournament/join/${tournament.id}`
+              "
+            >
+              S'inscrire au tournois
+            </button>
+          </a>
+        </div>
+        <div>
+          <p class="text-white text-center uppercase text-2xl font-bold">Matchs récents</p>
+          <MiniMatch :tournament="tournament"></MiniMatch>
+        </div>
       </div>
     </div>
-    <div class="tournament-mid">
-      <div class="tournament-point-list">
+    <div class="tournament-mid flex  justify-start">
+      <div v-if="pointSystem" class="tournament-point-list">
         <h4 class="tournament-section-title">Ensemble des points</h4>
-
-        <PointSystem :tournament="tournament" />
       </div>
-      <div class="tournament-point-list">
+      <div v-if="tournament.rewards" class="tournaments-rewards">
         <h4 class="tournament-section-title">Recompenses</h4>
-        <PointSystem :tournament="tournament" :reward="true" />
-        <Leaderboard />
+      </div>
+      <div class="tournament-leaderboard">
+        <Leaderboard :tournament="tournament" />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import PointSystem from "@/components/PointSystem";
+//import PointSystem from "@/components/PointSystem";
+import Leaderboard from "@/components/Leaderboard";
+import MiniMatch from "@/components/MiniMatch";
 
+//<PointSystem :tournament="tournament" :reward="true" />
+//
 export default {
   name: "TournamentData",
   props: ["tournament"],
@@ -48,10 +61,11 @@ export default {
     };
   },
   components: {
-    PointSystem,
+    Leaderboard, //PointSystem,
+    MiniMatch
   },
   mounted() {
-    // console.log(this.tournament);
+    console.log(this.tournament);
   },
   methods: {
     activateStrechAnimation() {
@@ -59,15 +73,6 @@ export default {
       this.strechAnimation = "strechAnimation";
       setTimeout(() => (this.strechAnimation = ""), 800);
     },
-  },
-  async computed() {
-    alert("lol");
-    this.strechAnimation = await new Promise((resolve) => {
-      return setTimeout(() => {
-        alert("LOL");
-        resolve("");
-      }, 1000);
-    });
   },
 };
 </script>

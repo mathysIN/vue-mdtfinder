@@ -6,6 +6,7 @@ import Team from '@/views/Team.vue'
 import Teams from '@/views/Teams.vue'
 import Tournament from '@/views/Tournament.vue'
 import Tournaments from '@/views/Tournaments.vue'
+import Match from '@/views/Match.vue'
 import Soon from '@/views/Soon.vue'
 
 const routes = [
@@ -28,17 +29,24 @@ const routes = [
   {
     path: "/team/:catchAll(.*)",
     name: "team",
+    redirect: "/soon",
     component: Team
   },
   {
     path: "/teams",
     name: "Teams",
+    redirect: "/soon",
     component: Teams
   },
   {
     path: "/tournament/:catchAll(.*)",
     name: "tournament",
     component: Tournament
+  },
+  {
+    path: "/match/:catchAll(.*)",
+    name: "match",
+    component: Match
   },
   {
     path: "/news",

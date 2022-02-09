@@ -1,12 +1,23 @@
 import axios from "axios";
 
-const url = "http://localhost:5000/api/tournaments/";
+const url = "/api/tournaments/";
 
 class TournamentService {
-    static getTournament(id) {
+    static get(id) {
         return new Promise((resolve, reject) => {
             axios.get(url + (id || "")).then(response => {
                 resolve(response.data);
+            }).catch(error => {
+                reject(error);
+            });
+        });
+    }
+
+    static getLeaderboard(id) {
+        return new Promise((resolve, reject) => {
+            axios.get(url + (id || "") + "/leaderboard").then(response => {
+                resolve(response.data);
+                console.log(response.data)
             }).catch(error => {
                 reject(error);
             });

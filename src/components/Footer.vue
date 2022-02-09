@@ -38,7 +38,6 @@
           <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
             >Mentions légales</a
           >
-          - {{ commit }}
         </p>
       </div>
     </div>
@@ -47,7 +46,6 @@
 
 <script>
 export default {
-    name: "Footer",
-    props: ["commit"]
+    name: "Footer"
 }
 </script>

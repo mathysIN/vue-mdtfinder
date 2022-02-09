@@ -3,7 +3,8 @@
     <div
       id="website-banner"
       :style="`
-        background-image: url('${tournament.wallpaper}');
+        background-image: url('${tournament.brand ? tournament.brand.wallpaper : undefined}');
+        background-size: 100%;
         background-position: center;
         width: 100%;
         height: 250px;
@@ -12,43 +13,38 @@
         z-index: 1;
         opacity: 0.5;
         filter: blur(4px);
+        left: 0;
       `"
     ></div>
     <div class="tournament-area">
       <!--${tournamentInformationModule} ${tournamentDataModule}-->
-      <TournamentData :tournament="tournament" />
+      <TournamentData v-if="tournament" :tournament="tournament" />
     </div>
   </div>
 </template>
 
 <script>
 import TournamentData from "@/components/TournamentData";
+import tournaments from "@/services/tournaments";
+import M from 'materialize-css'
 
 export default {
   name: "Tournament",
   data() {
     return {
-      tournament: this.findById(
-        this.contentData.tournamentsData,
-        this.filterUrl(this.page)
-      ),
+      tournament: null,
+      ready: false
     };
   },
-  props: ["contentData", "findById", "filterUrl", "page"],
-
-  created() {
-    console.log(this);
-    console.log(this.page);
-    console.log(this.$route);
+  async beforeMount() {
+    try {
+      this.tournament = await tournaments.get(this.page);
+    } catch (error) {
+      console.log(error);
+      M.toast({html: "Impossible de pouvoir charger le tournoi"})
+    }
   },
-  components: { TournamentData },
-  /*methods: {
-    filterUrl(url) {
-      return url.replace(/\//g, "");
-    },
-    findTournament(tournaments, name) {
-      return tournaments.find((t) => t.id == name);
-    },
-  },*/
+  props: ["contentData", "findById", "filterUrl", "page"],
+  components: { TournamentData }
 };
 </script>

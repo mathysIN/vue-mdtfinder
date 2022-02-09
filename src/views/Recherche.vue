@@ -1,5 +1,10 @@
 <template>
   <div>
+    <div class="warning-message bg-gray-700 bg-opacity-60 rounded-r-xl text-white border-l-4 border-solid border-red-600 p-4" >
+      <p>Les recherches de MDT ont été désactivées pour le moment.</p>
+      <p>Pour trouver un MDT facilement, venez participer au nouveau <a href="/tournament/elo_rosters_ranked">système de Ranked</a></p>
+    </div>
+    <!--
     <div class="team-poster-list">
       <div class="list-big-choices">
         <ul class="big-choice">
@@ -46,15 +51,15 @@
         <p class="mdt-search-title">Recherches MDT automatiques</p>
         <MDTCase :limit="1"/>
       </div>
-    </section>
+    </section>-->
   </div>
 </template>
 
 <script>
-import MDTCase from "@/components/MDTCase";
+//import MDTCase from "@/components/MDTCase";
 
 export default {
   name: "Recherche",
-  components: {MDTCase},
+  //components: {MDTCase},
 };
 </script>

@@ -31,7 +31,6 @@ export default {
   name: "PointSystem",
   props: ["tournament", "reward"],
   mounted() {
-    // console.log(this.tournament)
   },
   methods: {
     getDirection(i) {

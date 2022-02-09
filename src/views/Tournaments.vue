@@ -15,13 +15,9 @@
       "
     ></div>
     <div class="list-title">
-      <h2>Futurs Tournois De Test</h2>
+      <h2>Tournois actuels</h2>
     </div>
     <div class="tournament-show-list"><TournamentBanner :hidden="false" /></div>
-    <div class="list-title">
-      <h2>Autres Futurs Tournois (Info cachees)</h2>
-    </div>
-    <div class="tournament-show-list"><TournamentBanner :hidden="true" /></div>
   </div>
 </template>
 

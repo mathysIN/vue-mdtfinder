@@ -21,9 +21,9 @@ export default {
     return {
       banner: {
         image: {
-          link: "https://res.cloudinary.com/frozed/image/upload/v1597065598/mdtfinder/asset/banner_donation.png",
+          link: "https://res.cloudinary.com/frozed/image/upload/v1644251431/mdtfinder/asset/banner_donation_2.png",
         },
-        link: "https://www.paypal.com/pools/c/8q39gXq6SK",
+        link: "https://paypal.me/redlegamin",
       },
     };
   },
