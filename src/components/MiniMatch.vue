@@ -36,7 +36,6 @@ export default {
     },
     async beforeMount() {
         this.matchs = await matchs.get();
-        console.log(this.matchs)
     },
 }
 </script>

@@ -27,12 +27,10 @@ document.addEventListener("DOMContentLoaded", function () {
         M.toast({
           html: m
         });
-        console.log(m);
       })
       .fail(function (c) {
         var m = "Il y a eu une erreur";
         if (c.responseText) m = c.responseText;
-        console.log(c)
         M.toast({
           html: m
         });

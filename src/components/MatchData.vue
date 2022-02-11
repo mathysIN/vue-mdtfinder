@@ -1,7 +1,7 @@
 <template>
   <div v-if="match && leaders">
     <section class="mdt-stats">
-      <div class="mdt-title">
+      <div class="mdt-title sm:text-left text-center">
         <h2>Match {{ match.name || "#" + match.id }}</h2>
       </div>
       <div class="mdt-stats-top">
@@ -34,7 +34,7 @@
           <div class="mdt-separator-big">
             <p>Leaderboard</p>
           </div>
-          <div class="mdt-content">
+          <div class="mdt-content flow-root">
             <div class="first-team-content">
               <div class="mdt-player-case">
                 <img :src="head(leaders[0].minecraft)" />
@@ -100,7 +100,7 @@
           <div class="mdt-separator-big">
             <p>Resume</p>
           </div>
-          <div class="mdt-content inline-block">
+          <div class="mdt-content flow-root">
             <div class="first-team-content">
               <div class="mdt-player-case">
                 <img :src="head(leaders[0].minecraft)" />
@@ -126,7 +126,7 @@
                 <th class="tl">
                   <p>{{ totalKill.red }}</p>
                 </th>
-                <th><span class="kd text-center">Kills</span></th>
+                <th class="text-center"><span class="kd">Kills</span></th>
 
                 <th class="tr">
                   <p>{{ totalKill.blue }}</p>
@@ -193,8 +193,8 @@ export default {
           this.totalKill[player.team] + player.kd.kills;
       }
     }
-    if (this.match.reverted == true)
-      M.toast({ html: "NOTE : Ce match a été revert" });
+    if (this.match.reverted == true) M.toast({ html: "NOTE : Ce match a été revert" });
+    if (this.match.status != "ended") M.toast({ html: "NOTE : Ce match est en cours" });
   },
   methods: {
     head(username) {

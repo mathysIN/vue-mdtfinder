@@ -17,7 +17,6 @@ class TournamentService {
         return new Promise((resolve, reject) => {
             axios.get(url + (id || "") + "/leaderboard").then(response => {
                 resolve(response.data);
-                console.log(response.data)
             }).catch(error => {
                 reject(error);
             });

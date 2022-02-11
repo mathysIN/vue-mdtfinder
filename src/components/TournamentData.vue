@@ -64,9 +64,6 @@ export default {
     Leaderboard, //PointSystem,
     MiniMatch
   },
-  mounted() {
-    console.log(this.tournament);
-  },
   methods: {
     activateStrechAnimation() {
       if (this.strechAnimation != "") return;

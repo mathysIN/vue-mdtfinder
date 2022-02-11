@@ -25,7 +25,6 @@ export default {
     try {
       this.match = await matchs.get(this.page);
     } catch (error) {
-      console.log(error);
       M.toast({html: "Impossible de charger le match"})
     }
   },

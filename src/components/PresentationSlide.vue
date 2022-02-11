@@ -32,11 +32,6 @@ export default {
 
     },
 
-    methods: {
-        wannaKMS(context) {
-            console.log(context)
-        }
-    },
     created() {
         AOS.init()
     },

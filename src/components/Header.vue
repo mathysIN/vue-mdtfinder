@@ -27,10 +27,11 @@
               <button
                 type="button"
                 class="
+                  humburger-icon
                   text-white
                   hover:text-gray-400
                   focus:outline-none focus:text-gray-400
-                  md:text-2xl right-0 top-2 absolute
+                  md:text-2xl absolute
                 "
               >
                 <svg viewBox="0 0 24 24" class="w-6 h-6 fill-current">
@@ -141,3 +142,10 @@ export default {
   props: ["user", "logged"],
 };
 </script>
+
+<style scoped>
+.humburger-icon {
+  top: 12px;
+  right: 35px;
+}
+</style>

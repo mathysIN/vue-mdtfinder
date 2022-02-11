@@ -40,7 +40,6 @@ export default {
     try {
       this.tournament = await tournaments.get(this.page);
     } catch (error) {
-      console.log(error);
       M.toast({html: "Impossible de pouvoir charger le tournoi"})
     }
   },

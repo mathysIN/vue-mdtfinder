@@ -739,7 +739,7 @@ header {
 
 #structure {
   padding-top: 50px;
-  min-height: 320px;
+  /*min-height: 320px;*/
 }
 
 #website-banner {

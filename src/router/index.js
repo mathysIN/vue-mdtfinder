@@ -54,6 +54,16 @@ const routes = [
     redirect: "/soon"
   },
   {
+    path: "/users/:catchAll(.*)",
+    name: "Users",
+    redirect: "/soon"
+  },
+  {
+    path: "/login",
+    name: "Login",
+    redirect: "/soon"
+  },
+  {
     path: "/soon",
     name: "Soon",
     component: Soon

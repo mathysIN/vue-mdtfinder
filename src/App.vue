@@ -34,13 +34,9 @@ export default {
   async created() {},
   methods: {
     filterUrl(url) {
-      console.log(url.replace(/\//g, ""));
       return url.replace(/\//g, "");
     },
     findById(tournaments, name) {
-      tournaments.forEach((t) => {
-        console.log(t.id == name, t.id, name);
-      });
       return tournaments.find((t) => t.id == name);
     },
   },
