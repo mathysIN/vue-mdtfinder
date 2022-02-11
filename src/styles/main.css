@@ -1798,7 +1798,8 @@ li.prize {
   transition: all 0.2s;
   transform: translateY(2px);
   background-position-x: center;
-  margin-right: 30px;
+  margin-right: 15px;
+  margin-left: 15px;
   margin-bottom: 30px;
 }
 
