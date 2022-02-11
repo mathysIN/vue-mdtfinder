@@ -1,5 +1,5 @@
 <template>
-  <div class="flex grid-cols-[200px_minmax(900px,_1fr)_100px]">
+  <div class="md:flex block">
     <div class="tournament-top flex-1">
       <div class="tournament-top-up">
         <div class="tournament-poster">

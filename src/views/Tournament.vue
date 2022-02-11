@@ -26,7 +26,7 @@
 <script>
 import TournamentData from "@/components/TournamentData";
 import tournaments from "@/services/tournaments";
-import M from 'materialize-css'
+import M from 'materialize-css';
 
 export default {
   name: "Tournament",

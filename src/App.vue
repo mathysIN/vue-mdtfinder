@@ -2,16 +2,15 @@
   <body>
     <Header :user="user" />
     <Banner />
-    <div class="w-4/5 ml-auto mr-auto"><router-view
-      
-      :contentData="contentData"
-      :filterUrl="filterUrl"
-      :findById="findById"
-      :page="page"
-    />
+    <div class="sm:w-4/5 w-full ml-auto mr-auto">
+      <router-view
+        :contentData="contentData"
+        :filterUrl="filterUrl"
+        :findById="findById"
+        :page="page"
+      />
     </div>
     <Footer :commit="commit" />
-    
   </body>
 </template>
 
@@ -30,11 +29,9 @@ export default {
   components: {
     Header,
     Footer,
-    Banner
+    Banner,
   },
-  async created() {
-    
-  },
+  async created() {},
   methods: {
     filterUrl(url) {
       console.log(url.replace(/\//g, ""));
@@ -47,8 +44,7 @@ export default {
       return tournaments.find((t) => t.id == name);
     },
   },
-  mounted() {
-  },
+  mounted() {},
   data() {
     let pathname = window.location.pathname;
     return {
