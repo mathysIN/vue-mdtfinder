@@ -1,5 +1,5 @@
 <template>
-  <div id="structure" v-if="currentRouteName">
+  <div id="structure" class="md:mt-12" v-if="currentRouteName">
     <a :href="banner.link">
       <div class="banner">
         <img v-bind:src="banner.image.link" />
