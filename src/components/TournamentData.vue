@@ -38,7 +38,7 @@
       <div v-if="tournament.rewards" class="tournaments-rewards">
         <h4 class="tournament-section-title">Recompenses</h4>
       </div>
-      <div class="tournament-leaderboard">
+      <div class="tournament-leaderboard w-full">
         <Leaderboard :tournament="tournament" />
       </div>
     </div>

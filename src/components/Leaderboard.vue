@@ -3,7 +3,7 @@
   <div class="leaderboard">
     
     <div class="table-container">
-      <table class="roundedCorners">
+      <table class="roundedCorners overflow-x-scroll max-w-full">
         <tbody v-if="!error">
           <tr class="tr-top">
             <th>Rank</th>
@@ -11,8 +11,8 @@
             <th class="th-right">Points</th>
             <th class="th-right">Matches</th>
             <th class="th-right">Wins</th>
-            <th class="th-right">K/D</th>
             <th class="th-right">Kills</th>
+            <th class="th-right">Deaths</th>
           </tr>
           <tr v-if="players.length == 0">
             <Loading/>
@@ -24,12 +24,12 @@
           </tr>
           <tr v-for="(player, i) in players" :key="i">
             <th>#{{i + 1}}</th>
-            <th><a :href="'../users/' + player.id">{{ player.user.username }}</a></th>
+            <th><a :href="'../users/' + player.id">{{ player.user.link.minecraft || player.user.username }}</a></th>
             <th class="th-right">{{ player.score }}</th>
             <th class="th-right">{{player.matches }}</th>
             <th class="th-right">{{ player.wins }}</th>
-            <th class="th-right">{{ player.kd }}</th>
             <th class="th-right">{{ player.kills }}</th>
+            <th class="th-right">{{ player.deaths }}</th>
           </tr>
         </tbody>
       </table>
@@ -69,3 +69,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+select {
+    max-width: 100%;
+}
+</style>
