@@ -24,12 +24,12 @@
           </tr>
           <tr v-for="(player, i) in players" :key="i">
             <th>#{{i + 1}}</th>
-            <th><a :href="'../users/' + player.id">{{ player.user.link.minecraft || player.user.username }}</a></th>
-            <th class="th-right">{{ player.score }}</th>
-            <th class="th-right">{{player.matches }}</th>
-            <th class="th-right">{{ player.wins }}</th>
-            <th class="th-right">{{ player.kills }}</th>
-            <th class="th-right">{{ player.deaths }}</th>
+            <th><a :href="'../users/' + player.id">{{ player.user.link.minecraft || player.user.username || "???" }}</a></th>
+            <th class="th-right">{{ player.score || "-" }}</th>
+            <th class="th-right">{{player.matchs || "-" }}</th>
+            <th class="th-right">{{ player.wins || "-" }}</th>
+            <th class="th-right">{{ player.kills || "-" }}</th>
+            <th class="th-right">{{ player.deaths || "-" }}</th>
           </tr>
         </tbody>
       </table>
