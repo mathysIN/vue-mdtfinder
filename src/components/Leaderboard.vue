@@ -9,7 +9,7 @@
             <th>Rank</th>
             <th>Player</th>
             <th class="th-right">Points</th>
-            <th class="th-right">Matches</th>
+            <th class="th-right">Matchs</th>
             <th class="th-right">Wins</th>
             <th class="th-right">Kills</th>
             <th class="th-right">Deaths</th>
