@@ -7,7 +7,7 @@
       :key="i"
       class="tournament-box"
     >
-      <div v-if="tournament.hidden != hidden">
+      <div>
         <a :href="tournament.id ? './tournament/' + tournament.id : '' ">
           <div class="tournament-box-image">
             <img :src="tournament.brand ? tournament.brand.banner : tournament.banner" />
