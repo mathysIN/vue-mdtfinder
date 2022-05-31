@@ -19,11 +19,11 @@
         </div>
         <div class="tournament-info-user-score-rank text-center">
           <div class="stats-box-top-tournament-info-user-score-rank font-bold text-4xl italic align-middle text-white">
-            {{ getPlayer(i).score || "459" }}
+            {{ getPlayer(i).score || 0 }}
           </div>
           <div class="stats-box-top-tournament-info-user-score-rank-text text-xl font-bold align-middle text-quietgrey text-center flex items-center space-x-1">
             <img :src="getPlayer(i).rank.icon" class="h-6">
-            <span>{{ getPlayer(i).rank.rankName || "Or" }}</span>  
+            <span>{{ getPlayer(i).rank.rankName}}</span>  
           </div>
         </div>
       </div>
