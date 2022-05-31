@@ -6,6 +6,7 @@ import Team from '@/views/Team.vue'
 import Teams from '@/views/Teams.vue'
 import Tournament from '@/views/Tournament.vue'
 import Tournaments from '@/views/Tournaments.vue'
+import User from '@/views/User.vue'
 import Match from '@/views/Match.vue'
 import Soon from '@/views/Soon.vue'
 
@@ -15,6 +16,12 @@ const routes = [
     name: 'Home',
     alias: "/home",
     component: Home
+  },
+  {
+    path: "/user/:cactchAll(.*)",
+    name: 'User',
+    alias: "/users/:catchAll(.*)",
+    component: User
   },
   {
     path: "/rechercher",
@@ -51,11 +58,6 @@ const routes = [
   {
     path: "/news",
     name: "News",
-    redirect: "/soon"
-  },
-  {
-    path: "/users/:catchAll(.*)",
-    name: "Users",
     redirect: "/soon"
   },
   {

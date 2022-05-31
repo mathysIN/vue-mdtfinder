@@ -3,9 +3,23 @@ import axios from "axios";
 const url = "/api/users/";
 
 class UserService {
-    static getUser(id) {
-        if(!id) throw "ID is required";
-        return axios.get(url + id);
+    static get(id) {
+        return new Promise((resolve, reject) => {
+            axios.get(url + (id || "")).then(response => {
+                resolve(response.data);
+            }).catch(error => {
+                reject(error);
+            });
+        });
+    }
+    static getTournaments(id) {
+        return new Promise((resolve, reject) => {
+            axios.get(url + (id || "") + "/tournaments").then(response => {
+                resolve(response.data);
+            }).catch(error => {
+                reject(error);
+            });
+        });
     }
 }
 

@@ -99,6 +99,16 @@ video {
   src: url("https://cdn.glitch.com/12319aa7-c5e0-41a5-82b7-d5c9ad05fdd0%2FAemstel-Regular.ttf?v=1568917842506");
 }
 
+@layer components {
+  .user-stats-item-title {
+    @apply font-bold leading-none;
+  }
+
+  .user-stats-item-value {
+    @apply text-4xl text-white font-bold;
+  }
+}
+
 .discord-name,
 .minecraft-name {
   margin-left: 5px;
