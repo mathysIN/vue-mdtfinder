@@ -16,6 +16,9 @@
           <div class="stats-box-top-tournament-info-date text-base font-thin align-middle">
             <span> {{ tournament.descriptions.main }}</span> 
           </div>
+          <div v-if="getPlayer(i).isBanned" class="stats-box-top-tournament-info-ban font-bold text-xl italic align-middle text-white">
+            <span class="bg-red-800 py-1 px-2">Ban</span>
+          </div>
         </div>
         <div class="tournament-info-user-score-rank text-center">
           <div class="stats-box-top-tournament-info-user-score-rank font-bold text-4xl italic align-middle text-white">

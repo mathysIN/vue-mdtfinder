@@ -33,7 +33,7 @@ export default {
         try {
             this.user = await users.get(this.page);
         } catch (error) {
-            window.location.href = "/";
+            window.location.href = "/404";
         }
     },
     props: ["contentData", "findById", "filterUrl", "page"],

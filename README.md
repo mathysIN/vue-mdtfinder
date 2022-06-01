@@ -11,10 +11,11 @@ Bon au final reprise de MDTFinder tout cours donc j'vais utiliser ce code 👍
 - [x] Accueil
 - [x] Recherche
 - [x] Teams
+- [x] Profiles utilisateurs
 - [ ] Page Team Solo
 - [x] Tournois
-- [ ] Page Tournoi Solo
-- [x] News
+- [x] Page Tournoi Solo
+- [ ] News
 - [x] Animations
 - [x] Importations de scripts
 - [ ] Meilleure utilisation de composants
