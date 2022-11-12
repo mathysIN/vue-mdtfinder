@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="display: flex;">
     
     <Loading v-if="!error && tournamentList.length == 0 "/>
     <div
