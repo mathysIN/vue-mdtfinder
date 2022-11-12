@@ -1472,7 +1472,6 @@ button img {
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  width: 80%;
   overflow-x: auto;
 }
 
